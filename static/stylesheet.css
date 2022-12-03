@@ -1,0 +1,76 @@
+
+.display-input {
+    width: 90%;
+    text-align: center;
+    margin:  auto;
+    
+}
+
+.input-data {
+
+    text-align: center;
+    margin: 5px auto;
+    line-height: 2.4em;
+    border: 2px solid rgba(140, 114, 30);
+    padding: 5px 10px;
+}
+
+.new_todo_button {
+    
+    background-color: rgb(186 132 6 / 70%);
+    align-items: center;
+    color: white;
+    margin:  auto;
+    height: 40px;
+}
+
+.logout-btn {
+    background-color: rgba(209, 1, 1, 0.315);
+    color: white;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.display-name {
+
+    text-align: center;
+    margin: 10px auto;
+}
+
+table {
+    margin: 25px auto;
+}
+
+thead {
+    border-collapse: collapse;
+}
+
+table th,
+td {
+
+    border: 3px solid rgb(168, 139, 70)
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+
+
+.add-data-user {
+    border: 2px solid #DFA612;
+    color: black;
+    display: flex;
+    font-family: sans-serif;
+    font-weight: bold;
+    width: auto;
+}
+
+.autorization-form {
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10%;
+    background: rgb(146, 113, 31);
+    border-radius: 5px;
+}

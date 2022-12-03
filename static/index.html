@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="index.js"></script>
+    <title>task 27.11</title>
+</head>
+
+<body>
+
+    <div class="add-data-user">
+
+        <table id="table">
+            <thead>
+                <th>ID</th>
+                <th style="width: 60%; ">Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div>
+            <div class="display-input">
+                <input type="text" placeholder="add new Name.." class="input-data">
+                <button onclick="addName()" class="new_todo_button">Enter</button>
+            </div>
+            <div class="display-name">
+                <h1 id="name"></h1>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="autorization-form">
+        <h1 style="background-color:rgba(191, 255, 0, 0.193);text-align: center;">Register to login</h1>
+
+        <label style="color:white">Login:</label>
+        <input placeholder="input login" type="text" id="login-input" style="min-width: 30px;margin-left: 20%;">
+
+        <br>
+        <label style="color:white">Password:</label>
+        <input placeholder="input password" type="password" id="pass-input" style="min-width: 30px;margin-left: 15%;">
+        <br>
+        <div style="text-align: center; margin:3%;">
+            <button onclick="login()">Login</button>
+            <button id="register" onclick="register()">Register</button>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
