@@ -118,12 +118,16 @@ export async function editRang(user_id: number | unknown, get_r: string, put_r: 
     await sqlCommand(queryCommand);
 
 }
+export async function editName(id: number, name: string) {
+    const command = `UPDATE names SET name_field = '${name}' WHERE n_id = ${id}`;
+    await sqlCommand(command);
+}
 
 export async function delItem(id: number) {
     const query = `DELETE FROM users_names WHERE name_id=${id};
     DELETE FROM names WHERE n_id = ${id};`
     await sqlCommand(query) as ResultSetHeader;
-   
+
 
 }
 

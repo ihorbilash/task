@@ -1,7 +1,7 @@
 
 import express from 'express';
 
-import { gets, create, del, updateRang } from '../controllers/item';
+import { gets, create, del, updateRang,update } from '../controllers/item';
 import { login, logout, register } from '../controllers/user';
 const router = express.Router();
 
@@ -14,6 +14,6 @@ router.route('/items')
 .post(create)
 .put(updateRang)
 .delete(del)
-
+.patch(update)
 
 export default router;

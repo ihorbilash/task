@@ -42,24 +42,46 @@ function insertDataInTable(data) {
         tableHTML += "<tr>"
         tableHTML += `<td>${rang}</td>`
         tableHTML += textTable
-        tableHTML += `<td><button onclick="editName(${n_id})" >Delete</td>`
+        tableHTML += `<td><button onclick="editName(${n_id},${rang})" >  Edit  </td>`
         tableHTML += `<td><button onclick="deleteName(${n_id})" >Delete</td>`
         tableHTML += "</tr>";
     });
     return tableHTML;
 }
-function editName(id) {
-    var itemText = document.getElementById(`e${id}`);
+function editName(id, rang) {
+    var itemText = document.getElementById(`${rang}`);
     const text = itemText.innerText
     const input = document.createElement('input');
     input.value = text;
     itemText.append(input);
 
     input.addEventListener('blur', function () {
-        editItem(id, input.value);
+        editItem(rang, id, input.value);
     });
+}
+
+function editItem(rang, id, name) {
+    let checkBox = document.getElementById(`${rang}`);
+    checkBox = checkBox.checked;
+    let checkName = name ? name : document.getElementById(`${rang}`).innerText;
+
+    let request = JSON.stringify({ name: checkName, id: id, });
+
+    fetch('http://localhost:3005/api/items', {
+        method: 'PATCH',
+        body: request,
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    }).then(res => res.json())
+        .then(res => {
+            if (res.ok)
+                getNames();
+        });
 
 }
+
 //------
 function onDragStart(event) {
     event
@@ -156,7 +178,7 @@ function register() {
                 alert('you are registered');
             } else if (res.error === 'bad request') {
                 alert('this combination already exists');
-            } 
+            }
         })
 }
 function login() {
@@ -180,7 +202,7 @@ function login() {
 
             } else if (res.error === 'not found') {
                 alert('this combination of login and password was not found');
-            } 
+            }
         })
 }
 function logout() {
