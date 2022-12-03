@@ -1,4 +1,7 @@
 
-before start we have to install node modules:"npm i", and do migration-command in terminal: "npm run migrate-up "
+before start you have to:
+- fill .env properties of db mysql
+- install node modules: "npm i";
+- do migration-command : "npm run migrate-up "
 run app:  - "npm run start:dev"
-in browser go to adress 
+go to adress in browser
